@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+// Рекурсивна функція для обчислення n-го члена ряду
+double computeTerm(int n) {
+    // Базовий випадок: якщо n дорівнює 1, повертаємо перший член ряду, який дорівнює 20
+    if (n == 1) {
+        return 20;
+    }
+    // Рекурсивний випадок: повертаємо попередній член ряду, поділений на 2
+    else {
+        return computeTerm(n - 1) / 2;
+    }
+}
+
+int main() {
+    int n;
+    cout << "Введіть номер члена ряду (n): ";
+    cin >> n;
+
+    double term = computeTerm(n);
+    cout << n << "-й член ряду: " << term << endl;
+
+    return 0;
+}
